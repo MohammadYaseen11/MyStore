@@ -3,28 +3,15 @@
   <p class="subtitle">اختر منتجك المفضل وأضِفه إلى السلة</p>
 
   <div class="products-grid">
-    <article class="product-card" *ngFor="let product of products">
-      <img [src]="product.url" [alt]="product.name" />
-      <h2>{{ product.name }}</h2>
-      <p class="price">{{ product.price | currency : "USD" }}</p>
-      <p class="description">{{ product.description }}</p>
-
-      <form (ngSubmit)="addToCart(product)" #f="ngForm">
-        <label>
-          الكمية
-          <input
-            type="number"
-            min="1"
-            required
-            name="quantity-{{ product.id }}"
-            [(ngModel)]="quantities[product.id]"
-          />
-        </label>
-        <button type="submit" [disabled]="f.invalid">إضافة إلى السلة</button>
-        <button type="button" class="link" (click)="viewDetails(product)">
-          تفاصيل المنتج
-        </button>
-      </form>
-    </article>
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product"
+      [quantity]="quantities[product.id]"
+      (addToCartEvent)="addToCart($event.product, $event.quantity)"
+      (viewDetailsEvent)="viewDetails($event)"
+      (quantityChangeEvent)="
+        onQuantityChange($event.productId, $event.quantity)
+      "
+    ></app-product-card>
   </div>
 </section>

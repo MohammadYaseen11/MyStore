@@ -27,6 +27,7 @@ export class CartComponent implements OnInit {
 
   remove(item: CartItem): void {
     this.cartService.removeFromCart(item.product.id);
+    alert('تم حذف المنتج من السلة');
   }
 
   checkout(): void {

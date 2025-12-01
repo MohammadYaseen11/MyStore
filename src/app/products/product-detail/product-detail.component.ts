@@ -31,6 +31,10 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  onQuantityChange(value: any): void {
+    this.quantity = Number(value);
+  }
+
   addToCart(): void {
     if (!this.product) {
       return;

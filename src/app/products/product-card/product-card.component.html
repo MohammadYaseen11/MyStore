@@ -1,0 +1,24 @@
+<article class="product-card">
+  <img [src]="product.url" [alt]="product.name" />
+  <h2>{{ product.name }}</h2>
+  <p class="price">{{ product.price | currency : "USD" }}</p>
+  <p class="description">{{ product.description }}</p>
+
+  <form (ngSubmit)="onAddToCart()" #f="ngForm">
+    <label>
+      الكمية
+      <input
+        type="number"
+        min="1"
+        required
+        name="quantity"
+        [(ngModel)]="quantity"
+        (ngModelChange)="onQuantityChange($event)"
+      />
+    </label>
+    <button type="submit" [disabled]="f.invalid">إضافة إلى السلة</button>
+    <button type="button" class="link" (click)="onViewDetails()">
+      تفاصيل المنتج
+    </button>
+  </form>
+</article>

@@ -18,6 +18,7 @@
             min="1"
             required
             [(ngModel)]="quantity"
+            (ngModelChange)="onQuantityChange($event)"
           />
         </label>
         <button type="submit" [disabled]="detailForm.invalid">

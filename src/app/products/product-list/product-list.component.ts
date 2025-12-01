@@ -30,8 +30,12 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['/products', product.id]);
   }
 
-  addToCart(product: Product): void {
-    const qty = this.quantities[product.id] || 1;
+  onQuantityChange(productId: number, quantity: number): void {
+    this.quantities[productId] = quantity;
+  }
+
+  addToCart(product: Product, quantity: number): void {
+    const qty = quantity || this.quantities[product.id] || 1;
     this.cartService.addToCart(product, qty);
     alert('تمت إضافة المنتج إلى السلة');
   }

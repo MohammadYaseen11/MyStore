@@ -3,6 +3,10 @@
 
   <ul class="nav-links">
     <li><a routerLink="/">المنتجات</a></li>
-    <li><a routerLink="/cart">السلة</a></li>
+    <li>
+      <a routerLink="/cart"
+        >السلة <span *ngIf="cartItemCount > 0">({{ cartItemCount }})</span></a
+      >
+    </li>
   </ul>
 </nav>

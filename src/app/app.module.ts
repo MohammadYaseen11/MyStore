@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { ProductCardComponent } from './products/product-card/product-card.component';
 import { CartComponent } from './cart/cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout/checkout.component';
 import { OrderConfirmationComponent } from './orders/order-confirmation/order-confirmation.component';
@@ -17,6 +18,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     AppComponent,
     ProductListComponent,
     ProductDetailComponent,
+    ProductCardComponent,
     CartComponent,
     CheckoutComponent,
     OrderConfirmationComponent,

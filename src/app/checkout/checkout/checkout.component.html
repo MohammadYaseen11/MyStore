@@ -10,7 +10,9 @@
         required
         minlength="3"
         [(ngModel)]="name"
+        (ngModelChange)="validateName()"
       />
+      <span *ngIf="nameError" class="error">{{ nameError }}</span>
     </label>
 
     <label>
@@ -21,7 +23,9 @@
         required
         minlength="5"
         [(ngModel)]="address"
+        (ngModelChange)="validateAddress()"
       />
+      <span *ngIf="addressError" class="error">{{ addressError }}</span>
     </label>
 
     <label>
@@ -33,9 +37,20 @@
         minlength="16"
         maxlength="16"
         [(ngModel)]="creditCard"
+        (ngModelChange)="validateCreditCard()"
+        (input)="onCreditCardInput($event)"
+        pattern="[0-9]*"
       />
+      <span *ngIf="creditCardError" class="error">{{ creditCardError }}</span>
     </label>
 
-    <button type="submit" [disabled]="checkoutForm.invalid">تأكيد الطلب</button>
+    <button
+      type="submit"
+      [disabled]="
+        checkoutForm.invalid || nameError || addressError || creditCardError
+      "
+    >
+      تأكيد الطلب
+    </button>
   </form>
 </section>
