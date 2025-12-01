@@ -1,0 +1,29 @@
+<section *ngIf="product" class="product-detail">
+  <button class="link" routerLink="/">⬅ الرجوع لقائمة المنتجات</button>
+
+  <div class="detail-layout">
+    <img [src]="product.url" [alt]="product.name" />
+
+    <div class="info">
+      <h1>{{ product.name }}</h1>
+      <p class="price">{{ product.price | currency : "USD" }}</p>
+      <p class="description">{{ product.description }}</p>
+
+      <form (ngSubmit)="addToCart()" #detailForm="ngForm">
+        <label>
+          الكمية
+          <input
+            type="number"
+            name="quantity"
+            min="1"
+            required
+            [(ngModel)]="quantity"
+          />
+        </label>
+        <button type="submit" [disabled]="detailForm.invalid">
+          إضافة إلى السلة
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

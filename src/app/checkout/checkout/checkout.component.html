@@ -1,0 +1,41 @@
+<section class="checkout">
+  <h1>إتمام الشراء</h1>
+
+  <form #checkoutForm="ngForm" (ngSubmit)="onSubmit()">
+    <label>
+      الاسم الكامل
+      <input
+        type="text"
+        name="name"
+        required
+        minlength="3"
+        [(ngModel)]="name"
+      />
+    </label>
+
+    <label>
+      العنوان
+      <input
+        type="text"
+        name="address"
+        required
+        minlength="5"
+        [(ngModel)]="address"
+      />
+    </label>
+
+    <label>
+      رقم البطاقة (وهمي)
+      <input
+        type="text"
+        name="creditCard"
+        required
+        minlength="16"
+        maxlength="16"
+        [(ngModel)]="creditCard"
+      />
+    </label>
+
+    <button type="submit" [disabled]="checkoutForm.invalid">تأكيد الطلب</button>
+  </form>
+</section>

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Angular T‑Shirt",
+    "price": 19.99,
+    "description": "تيشيرت عصري يحمل شعار Angular لمحبّي تطوير الويب.",
+    "url": "https://via.placeholder.com/400x250?text=Angular+T-Shirt"
+  },
+  {
+    "id": 2,
+    "name": "TypeScript Mug",
+    "price": 12.5,
+    "description": "كوب قهوة مطبوع عليه شعار TypeScript لبدء يومك بشكل برمجي.",
+    "url": "https://via.placeholder.com/400x250?text=TS+Mug"
+  },
+  {
+    "id": 3,
+    "name": "RxJS Stickers Pack",
+    "price": 7.0,
+    "description": "مجموعة ستيكرات RxJS ملوّنة لتزيين اللابتوب أو الدفتر.",
+    "url": "https://via.placeholder.com/400x250?text=RxJS+Stickers"
+  }
+]
